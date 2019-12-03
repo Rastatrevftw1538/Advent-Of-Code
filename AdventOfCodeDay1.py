@@ -3,7 +3,6 @@ import re
 
 
 def main1(Input):
-
     read = open(Input, 'r')
     mass = []
     totalFuelValue = 0
