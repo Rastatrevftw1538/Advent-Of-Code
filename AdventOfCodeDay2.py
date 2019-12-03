@@ -70,5 +70,5 @@ def main2(Input):
     print(100 * ans_noun + ans_verb)
 
 
-# main1("CodeList.txt")
+main1("CodeList.txt")
 main2("CodeList.txt")
