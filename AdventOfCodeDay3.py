@@ -1,7 +1,7 @@
 import re
 
 
-def main1(Input):
+def main(Input):
     i = j = 0
     step = 1
     path = {}
@@ -42,15 +42,6 @@ def calculate_min_steps(intersections, steps_a, steps_b):
             raise Exception('Not an shared path intersection.')
         min_steps = min(min_steps, steps_a[point] + steps_b[point])
     return min_steps
-    #length = int(i[1: len(i)])
-    # if i[0] == "R":
-    #print("+".rjust(length, "-"))
-    # if i[0] == "U":
-    #print("+" + length * "|\n", end='+', flush=True)
-    # if i[0] == "D":
-    #print("+" + -length * "|\n", end='+', flush=True)
-    # if i[0] == "L":
-    #print("+".ljust(length, "-"))
 
 
 wire1 = ""
@@ -64,14 +55,9 @@ for thing in regex.finditer(WireList):
 wire1, wire2 = wire1.strip().split(","), wire2.strip().split(",")
 
 
-path_wire1, path_wire2 = main1(wire1), main1(wire2)
+path_wire1, path_wire2 = main(wire1), main(wire2)
 intersections = list(set(path_wire1.keys()) & set(path_wire2.keys()))
-print(calculate_min_distance(intersections), "answer")
+print(calculate_min_distance(intersections), "Answer Part1")
 
 
-def main2(Input):
-
-    return
-
-
-# main2("WireList.txt")
+print(calculate_min_steps(intersections, path_wire1, path_wire2), "Answer Part2")
